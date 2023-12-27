@@ -1,0 +1,23 @@
+schema {
+    query: Query
+}
+type Event {
+    idd: ID!
+    type: String!
+    productId: ID
+    Result: State!
+}
+enum State {
+    SUCCESS
+    FAIL
+}
+type Events {
+    nodes: [Event!]
+    totalCount: Int!
+}
+input EventFilterInput {
+    productId: ID
+}
+type Query {
+    Events(filter: EventFilterInput!): Events
+}

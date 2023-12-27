@@ -1,0 +1,10 @@
+query GetEvents($filter: EventFilterInput!) {
+    Events(filter: $filter) {
+        totalCount
+        nodes {
+            type
+            productId
+            Result
+        }
+    }
+}
